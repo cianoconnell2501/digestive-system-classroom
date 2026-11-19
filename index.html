@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex"><meta name="description" content="Travel through the human digestive system and answer questions in your copybook.">
+<title>Inside the digestive system | Junior Cycle Science</title>
+<style>:root{--ink:#18364b;--muted:#48677a;--deep:#11374b;--teal:#0b615e;--line:#cadce2;--paper:#f1f6f8;--purple:#685082;--white:#fff}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.5 Arial,sans-serif}
+.wrap{width:min(1150px,calc(100% - 36px));margin-inline:auto}
+.top{background:var(--deep);color:white}.header{min-height:58px;display:flex;justify-content:space-between;align-items:center;gap:12px}.header span,.header a{font-weight:bold;color:white}
+.intro{display:flex;justify-content:space-between;gap:24px;align-items:end;padding:25px 0 20px}.intro p{margin-top:8px;color:var(--muted);max-width:660px}
+h1,h2,h3,p,figure{margin:0}h1{font-size:clamp(2rem,4.4vw,3.2rem);letter-spacing:-.043em;line-height:1.08}h2{font-size:1.25rem}h3{font-size:1.06rem}
+.progress{min-width:155px;background:#e3efef;border:1px solid var(--line);padding:7px 12px;border-radius:8px}.progress label{font-size:.87rem}.progress progress{display:block;width:100%;height:12px;accent-color:var(--teal)}
+.layout{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);gap:16px;align-items:start}.panel{border:1px solid var(--line);background:white;border-radius:12px}
+.atlas{padding:13px;position:sticky;top:12px;scroll-margin-top:12px}.map-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:9px}.map-head p{color:var(--muted);font-size:.85rem}
+#body{display:block;width:100%;max-height:64vh;background:#f4f9fa;border:1px solid #deeaee;border-radius:8px;overflow:hidden}
+#camera{transform-origin:0 0;transition:transform .65s cubic-bezier(.2,.75,.18,1)}.organ{cursor:pointer;transition:filter .24s,opacity .24s}.organ.active{filter:drop-shadow(0 0 4px #143e53) saturate(1.28)}.organ.muted{opacity:.66}
+.marker{cursor:pointer;outline:none}.marker circle.visible{fill:#0b615e;stroke:#fff;stroke-width:2.4}.marker.helper circle.visible{fill:var(--purple)}.marker text{fill:white;text-anchor:middle;dominant-baseline:central;font:bold 15px Arial,sans-serif;pointer-events:none}.marker:focus-visible circle.visible,.marker.active circle.visible{stroke:#122e45;stroke-width:3.3}.marker.offscreen{visibility:hidden}
+.legend{display:flex;gap:11px;flex-wrap:wrap;color:var(--muted);font-size:.82rem;margin-top:9px}.legend i{display:inline-block;width:10px;height:10px;margin-right:4px;border-radius:50%;background:var(--teal)}.legend i.helper{background:var(--purple)}
+.lesson{padding:clamp(14px,2.7vw,24px)}.lesson-head h2{font-size:clamp(1.55rem,3vw,2.08rem);line-height:1.12}.lesson-head h2:focus{outline:none}.step{font-size:.82rem;font-weight:700;color:var(--teal);margin-bottom:4px}
+figure{border-radius:9px;border:1px solid var(--line);overflow:hidden;margin-top:12px;background:#f5f9fa}#organ-drawing svg{display:block;width:100%;max-height:235px;margin:auto}
+.close-line{stroke:#577180;stroke-width:1.35;fill:none}.close-dot{fill:#244655}.close-label{font:bold 12px Arial,sans-serif;fill:#18364b;paint-order:stroke;stroke:#f5f9fa;stroke-width:4px;stroke-linejoin:round}
+figcaption{background:#edf5f7;padding:8px 12px;font-size:.87rem}figcaption span{display:block;color:var(--muted);margin-top:2px}
+#fact-file,#copybook{margin-top:14px}#facts p{margin-top:6px}.reaction{background:#e4f2ee;padding:8px 10px;border-radius:6px;font-weight:bold}
+.questions{background:#edf5f8;border-left:4px solid #558da4;padding:10px 12px;border-radius:6px}.questions ol{list-style:none;padding:0;margin:7px 0 0}.questions li{display:grid;grid-template-columns:2.1rem 1fr;margin-top:6px}.number{color:#11556b;font-weight:bold}
+button{font:700 .88rem/1.2 Arial,sans-serif;min-height:44px;cursor:pointer;padding:8px 11px;border:1px solid #a8c1cc;border-radius:7px;color:#185563;background:white}button:hover,button[aria-pressed=true]{background:#e3eff1}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #ad6205;outline-offset:3px}
+.actions{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:13px}.primary{background:var(--teal);color:white;border-color:var(--teal);margin-left:auto}.primary:hover{background:#064743}
+#finished{margin-top:12px;background:#e1f3e9;padding:9px;font-weight:bold;color:#14573c;border-radius:6px}
+.stops,.recap{margin-top:15px;padding:13px}.stops nav{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.recap summary{font-weight:bold;cursor:pointer}.recap p{margin-top:8px}.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;text-align:left;margin-top:10px}th,td{vertical-align:top;padding:7px 9px;border:1px solid var(--line)}thead{background:#e3efef}footer{padding:15px 0 22px;color:var(--muted);font-size:.88rem}footer a{color:#155e77}
+@media(max-width:760px){.wrap{width:calc(100% - 22px)}.intro{flex-direction:column;align-items:stretch;gap:11px;padding:17px 0 13px}.layout{grid-template-columns:1fr;gap:10px}.atlas{position:static;padding:9px}.map-head{margin-bottom:5px}#body{height:min(44vh,355px);min-height:225px}.lesson{padding:12px}#organ-drawing svg{max-height:min(38vh,210px)}}
+@media(prefers-reduced-motion:reduce){#camera,.organ{transition:none!important}html{scroll-behavior:auto!important}}
+</style>
+
+</head>
+<body>
+<header class="top"><div class="wrap header"><span>Junior Cycle Science</span></div></header>
+<main class="wrap">
+<section class="intro"><div><h1>Inside the digestive system</h1><p>Put your name and date in your copybook. Follow the journey, read each fact file and answer the numbered questions in your copybook.</p></div>
+<div class="progress"><label for="progress"><strong id="progress-label">0 of 9 complete</strong></label><progress id="progress" value="0" max="9">0 of 9</progress></div></section>
+<div class="layout">
+<section class="atlas panel" id="atlas" aria-labelledby="map-title">
+ <div class="map-head"><div><h2 id="map-title">Body map</h2><p>Front view · tap a numbered organ</p></div><button id="overview" type="button" aria-pressed="true">Full body</button></div>
+ <svg id="body" viewBox="0 0 400 555" role="group" aria-label="Interactive front view of the digestive system">
+ <defs>
+  <radialGradient id="skin" cx=".43" cy=".32" r=".79"><stop stop-color="#fbebe1"/><stop offset=".58" stop-color="#ebccba"/><stop offset="1" stop-color="#c69385"/></radialGradient>
+  <linearGradient id="liver" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#c97864"/><stop offset=".58" stop-color="#ac554b"/><stop offset="1" stop-color="#723832"/></linearGradient>
+  <radialGradient id="stomach" cx=".48" cy=".28" r=".74"><stop stop-color="#ffbab6"/><stop offset=".54" stop-color="#e58993"/><stop offset="1" stop-color="#b45b78"/></radialGradient>
+  <linearGradient id="colon" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#aa81b8"/><stop offset=".5" stop-color="#8e679f"/><stop offset="1" stop-color="#725581"/></linearGradient>
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0v20" fill="none" stroke="#dbe8ed" stroke-width=".6"/></pattern>
+ </defs>
+ <rect width="400" height="555" fill="#f4f9fa"/><rect width="400" height="555" fill="url(#grid)"/>
+ <g id="camera">
+ <path d="M161 178q-9-10-17-23c-5-12-9-28-10-39-10-1-15-11-14-25 0-10 6-14 12-12 1-30 11-52 33-61 14-6 41-8 58 0 24 11 35 32 35 61 8-3 14 4 14 14 0 13-6 23-15 23-3 25-10 48-28 63l4 25c10 12 26 16 47 22 31 9 47 27 55 58l20 87 21 79-22 9-32-76-21-62-4 58c-1 33 6 56 8 82l5 75H211l-11-38-10 38H90l6-75c2-26 9-49 8-82l-4-58-21 62-32 76-22-9 21-79 20-87c8-31 24-49 55-58 21-6 37-10 47-22l4-25Z" fill="url(#skin)" stroke="#aa796f" stroke-width="1.5"/>
+ <path d="M132 80q1-32 18-47c17-16 62-23 86-5 14 11 20 30 22 52-12-7-19-16-26-30-17 12-52 16-77 10-7 10-14 16-23 20Z" fill="#956b62" opacity=".78"/>
+ <path d="M155 91q11-7 24-1m34 0q13-6 26 1m-80 10q8 3 16 0m41 0q8 3 16 0m-37 4-4 17h7m-44 32q18 26 41 28 23-2 40-28m-76 60q-7 11-29 20m101-20q7 11 29 20m-137 26q25 5 44 1m55 0q22 5 44-1m-151 79q-5 22-2 43m164-43q5 22 2 43m-113 126q13 13 33 18 20-5 33-18" stroke="#a47169" opacity=".56" stroke-width="2" fill="none" stroke-linecap="round"/>
+ <ellipse cx="199" cy="389" rx="106" ry="119" fill="#fce9e0" opacity=".53"/>
+ <g class="organ" id="organ-1"><path d="M171 137q14-9 27-5 14-4 27 5-7 10-15 14-12 5-23 0-9-4-16-14Z" fill="#ae5263" stroke="#753447" stroke-width="2"/><path d="M179 137q18 6 38 0l-5 7q-14 5-28-1Z" fill="#fff2df"/><path d="M184 147q14-6 28 0-16 8-28 0Z" fill="#e98a8c"/></g>
+ <g class="organ" id="organ-2"><path d="M198 152c-8 29-2 53-1 80l9 70" fill="none" stroke="#864b57" stroke-width="16" stroke-linecap="round"/><path d="M198 152c-8 29-2 53-1 80l9 70" fill="none" stroke="#e88f8c" stroke-width="11" stroke-linecap="round"/><path d="M196 166q-2 24 0 43l4 47" fill="none" stroke="#f8b7a8" stroke-width="3" stroke-linecap="round"/></g>
+ <g class="organ" id="organ-3"><path d="M205 281c12 10 20 2 32-3 18-8 40 3 47 23 9 28-10 57-35 68-14 6-31 4-44 0-17-5-29-2-42 7-8 6-17-1-14-9 5-14 22-18 40-21 16-2 23-12 19-26-3-12-10-25-3-39Z" fill="url(#stomach)" stroke="#883c59" stroke-width="2.4"/><path d="M265 296c10 15 5 43-10 56m-15-65c-6 7-11 13-21 13" fill="none" stroke="#f6b3b7" stroke-width="3" stroke-linecap="round"/></g>
+ <g class="organ" id="organ-4"><path d="M111 290c17-20 45-26 78-18 20 6 33 7 47 2-6 17-23 29-51 34-25 5-37 20-58 19-17-1-22-20-16-37Z" fill="url(#liver)" stroke="#733835" stroke-width="2.5"/><path d="M124 291c12-13 32-14 49-12m8 0q12 8 10 23" fill="none" stroke="#de9b84" opacity=".85" stroke-width="2.8" stroke-linecap="round"/></g>
+ <g class="organ" id="organ-5"><path d="M158 316c7 6 4 17-2 26-5 8-15 4-15-3 0-10 8-19 17-23Z" fill="#709358" stroke="#37563a" stroke-width="2"/><path d="M158 317q10 8 21 26l-4 11" fill="none" stroke="#5c7b44" stroke-width="3" stroke-linecap="round"/><path d="M149 330q-4 5-3 9" fill="none" stroke="#b9cc88" stroke-width="2" stroke-linecap="round"/></g>
+ <g class="organ" id="organ-6"><path d="M160 351q6-9 16-8 8-9 20-5 10-8 21-7 10-8 23-4 14-5 24-3-5 12-17 17-10 7-24 9-11 8-26 8-15 7-25 4-12 6-17-3Z" fill="#e4b367" stroke="#956633" stroke-width="2"/><path d="M167 354q20 0 38-7t42-14" fill="none" stroke="#a37135" stroke-width="2" stroke-linecap="round"/></g>
+ <!-- The body map shows the pancreas in front here so it can be selected. Its fact file explains its position behind the stomach. -->
+ <g class="organ" id="organ-7"><path d="M160 363c-8 9-11 18 2 23 16 6 51-8 67-3 18 6 15 20-5 23-22 4-58-3-69 4-11 8 5 18 25 19 20 2 60-3 63 10 4 12-33 16-56 12-18-3-38-1-38 11 0 13 30 12 53 12" fill="none" stroke="#a74f60" stroke-width="16" stroke-linecap="round"/><path d="M160 363c-8 9-11 18 2 23 16 6 51-8 67-3 18 6 15 20-5 23-22 4-58-3-69 4-11 8 5 18 25 19 20 2 60-3 63 10 4 12-33 16-56 12-18-3-38-1-38 11 0 13 30 12 53 12" fill="none" stroke="#ef9f93" stroke-width="11" stroke-linecap="round"/><path d="M195 474q-31 13-62-12" fill="none" stroke="#e9978c" stroke-width="10" stroke-linecap="round"/></g>
+ <g class="organ" id="organ-8"><path d="M133 462v-65c0-17 9-23 24-23h89q25 0 25 23v68c0 22-13 29-30 26-15-2-42-11-43 10v14" fill="none" stroke="#5f496e" stroke-width="23" stroke-linecap="round"/><path d="M133 462v-65c0-17 9-23 24-23h89q25 0 25 23v68c0 22-13 29-30 26-15-2-42-11-43 10v14" fill="none" stroke="url(#colon)" stroke-width="17" stroke-linecap="round"/><path d="M124 400q9 5 18 0m-18 14q9 5 18 0m-18 14q9 5 18 0m-18 14q9 5 18 0m10-75q4 6 0 15m16-16q4 6 0 16m16-16q4 6 0 16m16-16q4 6 0 16m16-16q4 6 0 16m16-16q4 6 0 16m15-16q-1 6-3 16m15 16q9 5 18 0m-18 14q9 5 18 0m-18 14q9 5 18 0m-18 14q9 5 18 0m-18 14q9 5 18 0m-23 25q3 6 11 9m-26-9q0 7-3 15" fill="none" stroke="#d3b8d8" stroke-width="2.2" stroke-linecap="round"/></g>
+ <g id="body-leaders" aria-hidden="true"></g>
+ <g id="body-markers"></g>
+ </g>
+ </svg>
+ <p class="legend"><span><i></i> Food pathway</span><span><i class="helper"></i> Helps digestion</span></p>
+</section>
+<section class="panel lesson">
+ <div class="lesson-head"><p id="step" class="step"></p><h2 id="fact-title" tabindex="-1"></h2></div>
+ <figure id="anatomy" hidden>
+  <div id="organ-drawing"></div>
+  <figcaption><strong id="drawing-title"></strong><span id="drawing-caption"></span></figcaption>
+ </figure>
+ <div id="fact-file" hidden><h3>Fact file</h3><div id="facts"></div></div>
+ <div id="copybook" class="questions" hidden><h3>Copybook questions</h3><ol id="questions"></ol></div>
+ <p id="finished" hidden role="status">You’ve completed all nine stops. Check that every answer is in your copybook.</p>
+ <div class="actions"><button type="button" id="previous" hidden>Previous</button><button type="button" class="primary" id="next">Start at the mouth</button></div>
+</section>
+</div>
+<section class="panel stops"><h2>Go to a stop</h2><nav id="stop-list" aria-label="Journey stops"></nav></section>
+<details class="panel recap"><summary>Chapter recap · Food and nutrients</summary>
+<div class="table-wrap"><table><thead><tr><th>Nutrient</th><th>What it does</th><th>Common sources</th></tr></thead><tbody>
+<tr><th>Carbohydrates</th><td>Supply energy. Glucose is readily available. Starch must be digested.</td><td>Fruit and honey contain glucose. Potatoes, rice and pasta contain starch.</td></tr>
+<tr><th>Fats</th><td>Provide energy and help insulate the body.</td><td>Butter, cream and oils.</td></tr>
+<tr><th>Proteins</th><td>Support growth and repair.</td><td>Fish, eggs, beans and lean meat.</td></tr>
+<tr><th>Vitamin C</th><td>Helps prevent scurvy.</td><td>Citrus fruit, potatoes and other vegetables.</td></tr>
+<tr><th>Vitamin D</th><td>Helps prevent rickets.</td><td>Oily fish and fortified foods. Our skin also makes it in sunlight.</td></tr>
+<tr><th>Water</th><td>Helps cells work, regulates temperature and acts as a solvent.</td><td>Drinks and foods such as vegetables.</td></tr></tbody></table></div>
+<p>A <strong>balanced diet</strong> provides nutrients in suitable amounts. A <strong>deficiency disease</strong> can develop when the body receives too little of a nutrient.</p></details>
+</main><footer class="wrap">Biological World 4 · Digestive system<br><a href="https://www.niddk.nih.gov/health-information/digestive-diseases/digestive-system-how-it-works">Anatomy reference: NIDDK</a></footer>
+<script>const stops = [
+  {
+    "name": "Mouth",
+    "type": "Food pathway",
+    "points": [
+      "Digestion breaks food down into smaller substances. In the mouth, teeth break food into smaller pieces by mechanical digestion.",
+      "Incisors cut and slice. Canines grip and tear. Premolars and molars crush and chew.",
+      "Saliva contains amylase, an enzyme that starts chemical digestion of starch. Enzymes are biological catalysts that speed up reactions. The substrate is what the enzyme acts on. The product is what it makes."
+    ],
+    "reaction": "Starch (substrate) → Maltose (product) · Enzyme: amylase",
+    "qs": [
+      "Name the type of tooth that cuts food and the type that grips and tears it.",
+      "Describe one example each of mechanical digestion and chemical digestion in the mouth.",
+      "For the reaction shown, name the enzyme, its substrate and its product."
+    ]
+  },
+  {
+    "name": "Oesophagus",
+    "type": "Food pathway",
+    "points": [
+      "The oesophagus, or food pipe, is a muscular tube that connects the mouth to the stomach.",
+      "Muscles in its wall squeeze to push swallowed food down into the stomach."
+    ],
+    "qs": [
+      "Name the two parts that the oesophagus connects.",
+      "What moves swallowed food along the oesophagus?"
+    ]
+  },
+  {
+    "name": "Stomach",
+    "type": "Food pathway",
+    "points": [
+      "The stomach is a muscular bag that holds food for a few hours. Its muscles churn the food and mix it with digestive juices. Churning is mechanical digestion.",
+      "Hydrochloric acid (HCl) helps break down food and kills many bacteria. A layer of mucus protects the stomach lining from its acidic contents.",
+      "The food mixture then moves into the small intestine."
+    ],
+    "qs": [
+      "Describe how the stomach carries out mechanical digestion.",
+      "Name the acid in the stomach and state one job it does.",
+      "What would the stomach lining lose if it had no mucus coating? Explain."
+    ]
+  },
+  {
+    "name": "Liver",
+    "type": "Helps digestion",
+    "points": [
+      "The liver makes bile. It also helps break down old red blood cells.",
+      "Bile emulsifies fats. This means it breaks large drops of fat into smaller droplets. Bile acts in the small intestine."
+    ],
+    "qs": [
+      "What digestive substance does the liver make?",
+      "Explain what “emulsifies fats” means.",
+      "Name another job of the liver mentioned in the fact file."
+    ]
+  },
+  {
+    "name": "Gall bladder",
+    "type": "Helps digestion",
+    "points": [
+      "The gall bladder is a small sac under the liver. It stores bile made by the liver and releases it into the small intestine.",
+      "Bile can then mix with food in the small intestine."
+    ],
+    "qs": [
+      "Where is bile made, stored and used? Write the three organs in order.",
+      "Explain how the gall bladder helps the small intestine deal with fats."
+    ]
+  },
+  {
+    "name": "Pancreas",
+    "type": "Helps digestion",
+    "points": [
+      "The pancreas is a flattened gland that lies behind the stomach. It makes amylase and releases it into the small intestine.",
+      "Amylase helps break down starch to make maltose."
+    ],
+    "qs": [
+      "Name the enzyme from the pancreas described here. Where does it act?",
+      "Which would this enzyme act on, starch or fat? Name the product."
+    ]
+  },
+  {
+    "name": "Small intestine",
+    "type": "Food pathway",
+    "points": [
+      "Amylase continues to break down starch into maltose here. Bile emulsifies fats here.",
+      "Digested nutrients pass through the wall of the small intestine into the body. The blood carries nutrients such as glucose to body cells. Plasma is the liquid part of the blood.",
+      "Absorption is the passage of digested nutrients from the gut into the body."
+    ],
+    "qs": [
+      "What does absorption mean, and where does most nutrient absorption take place?",
+      "What does bile do here? What does amylase do here?",
+      "Explain how glucose can get from the small intestine to a muscle cell."
+    ]
+  },
+  {
+    "name": "Large intestine",
+    "type": "Food pathway",
+    "points": [
+      "Material left after digestion passes into the large intestine. The large intestine absorbs water from this material back into the blood.",
+      "As water is removed, the remaining material becomes more solid and forms faeces."
+    ],
+    "qs": [
+      "What does the large intestine absorb from the material passing through it? Where does this go?",
+      "Compare the main absorption jobs of the small and large intestines."
+    ]
+  },
+  {
+    "name": "From food to cells",
+    "type": "Final checkpoint",
+    "points": [
+      "Food provides materials for growth and repair and a source of energy. Digestion breaks large food molecules down so the body can absorb them. For example, starch is ultimately broken down to glucose.",
+      "The blood carries absorbed glucose to body cells. During respiration, cells release usable energy from glucose. Mitochondria are where most of this energy is released during aerobic respiration."
+    ],
+    "qs": [
+      "Trace a bite of bread in order from the mouth to the large intestine. Include the food pipe.",
+      "Explain how eating bread can supply energy to muscle cells. Use digestion, absorption, blood and respiration in your answer."
+    ]
+  }
+];
+
+const anatomy = [
+  {
+    name: 'Mouth', group: 'Food pathway', cam: [208, 147, 1.93], marker: [305, 137],
+    title: 'Inside the mouth',
+    detail: 'Side view. The teeth and tongue handle food as it enters, and saliva mixes with it.',
+    image: '<path d="M193 43Q161 27 125 43L102 61 88 88 55 99 68 111 52 124 70 133 79 173 101 198 136 200 155 184 171 177 216 177V65Z" fill="#eac2ad" stroke="#814f53" stroke-width="2"/><path d="M69 120Q106 94 142 111L176 118 181 151 205 158V173L168 165 150 151Q108 165 71 134Z" fill="#77354d"/><path d="M81 136Q108 121 143 128L161 143 156 151Q114 156 81 136Z" fill="#e96e7c" stroke="#91405d" stroke-width="2"/><path d="M75 117Q97 104 128 110L124 119 113 120 109 115 104 121 94 121 90 116 85 122 77 122Z" fill="#fff2de" stroke="#b98774" stroke-width="1.3"/><path d="M79 137l7 1 4 6 7-3 7 4 10 1 7 5-7 4-20-3-13-7Z" fill="#fff2de" stroke="#b98774" stroke-width="1.3"/><path d="M148 177q11-15 29-9l-4 14-17 6Z" fill="#e5b557" stroke="#94692e" stroke-width="1.5"/><path d="M169 174q-6-16-26-22" fill="none" stroke="#b77f31" stroke-width="2"/>',
+    labels: [['Teeth',98,115,9,74],['Tongue',126,142,270,127],['Salivary gland',162,178,243,207]]
+  },
+  {
+    name: 'Oesophagus', group: 'Food pathway', cam: [204, 229, 1.72], marker: [106, 205],
+    title: 'The food pipe in section',
+    detail: 'The muscular wall squeezes behind swallowed food and moves it down towards the stomach.',
+    image: '<path d="M147 29C139 60 140 86 149 112S142 168 150 188L147 211H205L194 188C189 157 195 132 195 111S190 53 196 29Z" fill="#d2747c" stroke="#884559" stroke-width="2"/><path d="M162 30C154 50 154 72 169 95c5 9 3 21-2 32-8 20-5 51 1 63l-4 21h21l-5-23c-5-21 3-48 4-59 4-27-10-46-9-65l5-34Z" fill="#f7c5b6" stroke="#a84d62" stroke-width="1.7"/><path d="M153 51l-1 18m-1 65-3 19m43-100 1 15m-1 94 2 13" fill="none" stroke="#f4b8ad" stroke-width="2" stroke-linecap="round"/><path d="M175 115c9 1 11 10 3 19-7 7-16 3-17-5-2-7 7-15 14-14Z" fill="#e1a442" stroke="#795820" stroke-width="2"/><path d="M176 149v23m-5-7 5 7 5-7" stroke="#155c68" stroke-width="2.5" fill="none" stroke-linecap="round"/>',
+    labels: [['Muscular wall',150,76,12,63],['Swallowed food',175,126,235,108],['Towards stomach',176,195,230,211]]
+  },
+  {
+    name: 'Stomach', group: 'Food pathway', cam: [231, 307, 1.95], marker: [319, 264],
+    title: 'The stomach cut open',
+    detail: 'Folds mark the inner lining. The muscular wall churns food before it passes into the small intestine.',
+    image: '<path d="M171 25h26v42c9 10 19 0 28-3 22-11 50 1 58 21 12 29-4 70-32 91-24 17-54 17-78 11-19-4-29-4-42 9l-34-20c19-25 48-29 74-27 14 1 25-6 25-18 1-12-7-25-16-36-9-14-9-22-9-34Z" fill="#d27788" stroke="#873b52" stroke-width="2"/><path d="M190 79c15 17 23-1 44-4 15-3 34 5 39 20 7 22-7 54-27 68-20 13-47 18-70 12-26-6-39 3-50 10l-10-7c14-14 34-19 59-17 16 1 31-7 32-24 1-15-5-34-17-47Z" fill="#ed9ca4" stroke="#a94e63" stroke-width="2"/><path d="M230 84c-14 14 16 18 4 31-7 7-2 10 7 14 13 7 0 19-8 24m19-66c-13 16 19 14 14 28s-11 18-21 23m-26-39c-11 10 7 16 1 25-9 11 9 16-4 29m-9 2q-10 9-20 9" fill="none" stroke="#b65067" stroke-width="3.5" stroke-linecap="round"/><path d="M173 29h22M132 192q-18 21-40 13c-12-5-15-22-15-26l20-3" fill="none" stroke="#955367" stroke-width="2"/>',
+    labels: [['Oesophagus',182,47,27,38],['Inner lining',242,114,260,41],['Muscle wall',258,166,264,211],['To small intestine',115,185,12,214]]
+  },
+  {
+    name: 'Liver', group: 'Helps digestion', cam: [168, 299, 1.90], marker: [83, 280],
+    title: 'The liver and its outlet for bile',
+    detail: 'The liver is usually mostly on the person’s right. The gall bladder sits underneath it.',
+    image: '<path d="M70 78C101 42 155 40 203 58c22 8 47 4 82 5-10 30-49 45-80 58-21 10-36 33-59 41-28 9-71 7-81-20-8-22-7-46 5-64Z" fill="#a4544e" stroke="#6b3531" stroke-width="2"/><path d="M72 95c11-32 47-45 84-42 29 1 52 20 80 17-14 15-30 29-57 43-28 13-32 35-68 41-26 4-37-12-39-28Z" fill="#b7645a"/><path d="M163 54c8 28 12 43 5 76" fill="none" stroke="#82463e" stroke-width="3" stroke-linecap="round"/><path d="M151 135c-17-4-25 17-24 29 1 11 13 17 22 10l12-20 14-8-6-8-14 5Z" fill="#6d9052" stroke="#325a41" stroke-width="2"/><path d="M187 113l-16 25 15 20 6 45" fill="none" stroke="#4d7049" stroke-width="7" stroke-linecap="round"/>',
+    labels: [['Liver',106,94,16,46],['Gall bladder',139,161,9,211],['Bile duct',191,184,251,204]]
+  },
+  {
+    name: 'Gall bladder', group: 'Helps digestion', cam: [163, 326, 2.12], marker: [90, 346],
+    title: 'The gall bladder beneath the liver',
+    detail: 'The pear-shaped sac stores bile. Bile travels through the duct to the first part of the small intestine.',
+    image: '<path d="M82 52c26-20 93-26 149 2l-12 34-61 16-60-7Z" fill="#a4544e" stroke="#6b3531" stroke-width="2"/><path d="M176 73q8 30 19 40l10 19 10 61" fill="none" stroke="#415c34" stroke-width="12" stroke-linecap="round"/><path d="M176 73q8 30 19 40l10 19 10 61" fill="none" stroke="#91a966" stroke-width="6" stroke-linecap="round"/><path d="M177 131c-14-5-25-11-28-29-3-11-16-7-19 2-5 16-23 28-23 46 0 16 13 29 30 26 17-3 26-22 32-31 3-5 11-4 28-12l-5-9-15 7Z" fill="#78a05b" stroke="#415c34" stroke-width="2"/><path d="M125 148c0 9 7 16 14 14" fill="none" stroke="#bcd29d" stroke-width="3" stroke-linecap="round"/><path d="M249 177c-21-3-42 9-43 20-2 11 13 18 30 17h47" fill="none" stroke="#ad6171" stroke-width="19" stroke-linecap="round"/><path d="M249 177c-21-3-42 9-43 20-2 11 13 18 30 17h47" fill="none" stroke="#e9a0a3" stroke-width="13" stroke-linecap="round"/>',
+    labels: [['Liver',123,64,19,27],['Gall bladder',135,147,16,194],['Bile duct',208,154,252,125],['Small intestine',230,212,268,235]]
+  },
+  {
+    name: 'Pancreas', group: 'Helps digestion', cam: [207, 343, 1.95], marker: [328, 345],
+    title: 'The pancreas and its duct',
+    detail: 'The pancreas lies behind the stomach. Its duct carries digestive juice into the first part of the small intestine.',
+    image: '<path d="M117 89c-36-12-69 13-64 51 5 32 23 46 56 40l21 14" fill="none" stroke="#a14e61" stroke-width="24" stroke-linecap="round"/><path d="M117 89c-36-12-69 13-64 51 5 32 23 46 56 40l21 14" fill="none" stroke="#e5a1a0" stroke-width="18" stroke-linecap="round"/><path d="M93 110q1-14 17-14 7-10 21-4 9-11 25-2 9-13 25-7 13-13 28-4 12-11 25-3 17-11 30-13 7-3 12 2-4 10-20 18-6 10-22 12-8 14-23 11-12 11-29 10-19 11-39 8-1 15-16 19-8-2-17 2-14-2-18-14-8-11 1-22Z" fill="#e1ad56" stroke="#986a31" stroke-width="2"/><path d="M254 75c-22 13-46 13-67 23-26 12-55 19-68 19-15 0-20 17-39 25" fill="none" stroke="#855b30" stroke-width="3" stroke-linecap="round"/><path d="M123 97l9 14m25-17 9 11m33-19 5 5m-81 35 10 7" fill="none" stroke="#a37439" stroke-width="1.5"/>',
+    labels: [['Pancreas',210,87,249,38],['Pancreatic duct',166,106,223,161],['Small intestine',65,158,12,218]]
+  },
+  {
+    name: 'Small intestine', group: 'Food pathway', cam: [202, 424, 1.75], marker: [321, 428],
+    title: 'The small intestine unmasked',
+    detail: 'Its first part receives bile and pancreatic juice. Its long coils absorb the digested nutrients.',
+    image: '<path d="M246 47q22 7 23 25c1 23-27 38-45 23l-16-15c-23-13-59 1-70 15-13 16 27 22 64 17 43-6 67 11 55 29-11 18-44 14-83 8-27-4-75-8-75 10-1 20 62 10 104 12 28 2 39 22 20 31-12 7-88 4-116-1-25-5-56-2-62-3" fill="none" stroke="#a44b5f" stroke-width="19" stroke-linecap="round" stroke-linejoin="round"/><path d="M246 47q22 7 23 25c1 23-27 38-45 23l-16-15c-23-13-59 1-70 15-13 16 27 22 64 17 43-6 67 11 55 29-11 18-44 14-83 8-27-4-75-8-75 10-1 20 62 10 104 12 28 2 39 22 20 31-12 7-88 4-116-1-25-5-56-2-62-3" fill="none" stroke="#ec9c90" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><path d="M57 182q-21-3-22 12-2 15 6 25" fill="none" stroke="#9177ab" stroke-width="11" stroke-linecap="round"/>',
+    labels: [['From stomach',246,47,180,21],['First part',267,74,294,75],['Coils',166,152,284,192],['Joins large intestine',56,199,77,236]]
+  },
+  {
+    name: 'Large intestine', group: 'Food pathway', cam: [204, 441, 1.56], marker: [77, 427],
+    title: 'The large intestine and rectum',
+    detail: 'The colon forms a frame around the small intestine. The wide pouch at the start receives material from the small intestine.',
+    image: '<path d="M88 174V83Q87 62 110 63q68 13 129-1 23-2 23 21v70q1 31-29 29c-23-2-52-13-52 14v27" fill="none" stroke="#6a4e82" stroke-width="28" stroke-linecap="round"/><path d="M88 174V83Q87 62 110 63q68 13 129-1 23-2 23 21v70q1 31-29 29c-23-2-52-13-52 14v27" fill="none" stroke="#b490c1" stroke-width="20" stroke-linecap="round"/><path d="M86 170q-9 16 2 29-3 12-13 17" fill="none" stroke="#87659c" stroke-width="8" stroke-linecap="round"/><path d="M142 147q-21 16-42 14" fill="none" stroke="#df8b82" stroke-width="11" stroke-linecap="round"/><path d="M77 97q10 5 20 0m-20 18q10 5 20 0m-20 19q10 5 20 0m-20 19q10 5 20 0m23-99q2 10-2 20m24-16q2 10-2 21m24-19q2 10-2 20m25-20q2 10-2 20m24-22q4 11 0 20m24-25q4 10 1 20m17 22q10 6 20 0m-20 19q10 6 20 0m-20 20q10 6 20 0m-23 25q10 8 19 7m-30 1q0 11-4 18" fill="none" stroke="#8d689f" stroke-width="2.5" stroke-linecap="round"/>',
+    labels: [['Colon',173,68,163,28],['From small intestine',118,154,12,123],['Rectum',181,216,224,231]]
+  }
+];
+
+const get = id => document.getElementById(id);
+const svgNS = 'http://www.w3.org/2000/svg';
+const organPoints = [[210,142],[195,205],[267,302],[118,299],[151,338],[246,339],[229,432],[133,426]];
+const storageKey = 'digestive-journey-progress-v2';
+let current = -1;
+let zoomed = false;
+let completed = new Set();
+try {
+  const saved = JSON.parse(localStorage.getItem(storageKey) || '[]');
+  if (Array.isArray(saved)) completed = new Set(saved.filter(n => Number.isInteger(n) && n >= 0 && n < stops.length));
+} catch {}
+
+const svgElement = (tag, attributes) => {
+  const node = document.createElementNS(svgNS,tag);
+  for (const [name,value] of Object.entries(attributes)) node.setAttribute(name,value);
+  return node;
+};
+const htmlElement = (tag, text, className) => {
+  const node = document.createElement(tag);
+  node.textContent = text;
+  if (className) node.className = className;
+  return node;
+};
+const markers = anatomy.map((part,i) => {
+  const [x,y] = part.marker;
+  const [ox,oy] = organPoints[i];
+  const line = svgElement('path',{d:'M'+ox+' '+oy+'L'+x+' '+y,fill:'none',stroke:'#476b77','stroke-width':1.5});
+  get('body-leaders').append(line);
+  const marker = svgElement('g',{class:'marker'+(part.group==='Helps digestion'?' helper':''),transform:'translate('+x+' '+y+')',role:'button',tabindex:0,'aria-label':(i+1)+'. '+part.name});
+  marker.append(svgElement('circle',{r:24,fill:'transparent'}),svgElement('circle',{r:15,class:'visible'}));
+  const number = svgElement('text',{x:0,y:0});
+  number.textContent = i+1;
+  marker.append(number);
+  marker.addEventListener('click', () => showStop(i,true));
+  marker.addEventListener('keydown', event => {
+    if (event.key==='Enter' || event.key===' ') { event.preventDefault(); showStop(i,true); }
+  });
+  get('body-markers').append(marker);
+  get('organ-'+(i+1)).addEventListener('click', () => showStop(i,true));
+  return {marker,line,x,y,ox,oy};
+});
+const buttons = stops.map((stop,i) => {
+  const button = htmlElement('button',(i+1)+'. '+stop.name);
+  button.type='button';
+  button.addEventListener('click', () => showStop(i,true));
+  get('stop-list').append(button);
+  return button;
+});
+
+function updateCamera() {
+  const part = zoomed ? anatomy[current] : null;
+  const [x,y,scale] = part?.cam || [200,277.5,1];
+  const tx = 200-x*scale;
+  const ty = 277.5-y*scale;
+  get('camera').style.transform = 'translate('+tx+'px,'+ty+'px) scale('+scale+')';
+  get('overview').setAttribute('aria-pressed',String(!part));
+  markers.forEach(({marker,line,x,y,ox,oy},i) => {
+    const active = i===current;
+    const pad = 25*scale;
+    const clamp = (value,min,max) => Math.max(min,Math.min(value,max));
+    const showX = part && active ? (clamp(x*scale+tx,pad,400-pad)-tx)/scale : x;
+    const showY = part && active ? (clamp(y*scale+ty,pad,555-pad)-ty)/scale : y;
+    const out = !active && (x*scale+tx<pad || x*scale+tx>400-pad || y*scale+ty<pad || y*scale+ty>555-pad);
+    marker.setAttribute('transform','translate('+showX+' '+showY+')');
+    line.setAttribute('d','M'+ox+' '+oy+'L'+showX+' '+showY);
+    marker.classList.toggle('offscreen',out);
+    marker.classList.toggle('active',active);
+    marker.setAttribute('tabindex',out?-1:0);
+    marker.setAttribute('aria-pressed',String(active));
+    line.setAttribute('visibility',out?'hidden':'visible');
+    get('organ-'+(i+1)).classList.toggle('active',active);
+    get('organ-'+(i+1)).classList.toggle('muted',!!part&&!active);
+  });
+}
+function drawCloseUp(part) {
+  const labelMarkup = part.labels.map(([label,x,y,lx,ly]) => {
+    const width = Math.min(label.length*6.1,108);
+    const end = lx < x ? Math.min(lx+width+2,x) : lx-4;
+    return '<path class="close-line" d="M'+x+' '+y+' L'+end+' '+(ly-4)+'"/><circle class="close-dot" cx="'+x+'" cy="'+y+'" r="2.2"/><text class="close-label" x="'+lx+'" y="'+ly+'">'+label+'</text>';
+  }).join('');
+  get('organ-drawing').innerHTML='<svg viewBox="0 0 380 243" role="img" aria-label="'+part.title+'. Labelled '+part.labels.map(label=>label[0]).join(', ')+'"><g>'+part.image+'</g>'+labelMarkup+'</svg>';
+  get('drawing-title').textContent=part.title;
+  get('drawing-caption').textContent=part.detail;
+}
+function drawPathway() {
+  get('organ-drawing').replaceChildren();
+  get('drawing-title').textContent='From bread to body cells';
+  get('drawing-caption').textContent='Use your fact files to trace what happens to the bread and how glucose reaches a muscle cell.';
+}
+function showStop(i, follow=false) {
+  const stop=stops[i];
+  if (!stop) return;
+  current=i;
+  zoomed=i<anatomy.length;
+  get('step').textContent='Stop '+(i+1)+' of '+stops.length+' · '+stop.type;
+  get('fact-title').textContent=stop.name;
+  for (const id of ['anatomy','fact-file','copybook','previous']) get(id).hidden=false;
+  if (anatomy[i]) drawCloseUp(anatomy[i]); else drawPathway();
+  get('facts').replaceChildren(...stop.points.map(point=>htmlElement('p',point)));
+  if (stop.reaction) get('facts').append(htmlElement('p',stop.reaction,'reaction'));
+  get('questions').replaceChildren(...stop.qs.map((q,j)=>{
+    const line=document.createElement('li');
+    line.append(htmlElement('span',(i+1)+'.'+(j+1),'number'),htmlElement('span',q));
+    return line;
+  }));
+  updateCamera();
+  updateProgress();
+  if (follow) {
+    get('fact-title').focus({preventScroll:true});
+    if (matchMedia('(max-width:760px)').matches) {
+      const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+      get('atlas').scrollIntoView({block:'start',behavior:reduce?'instant':'smooth'});
+    }
+  }
+}
+function updateProgress() {
+  get('progress').value=completed.size;
+  get('progress-label').textContent=completed.size+' of '+stops.length+' complete';
+  get('finished').hidden=completed.size!==stops.length;
+  const done=completed.has(current);
+  const last=current===stops.length-1;
+  if (current>=0) get('next').textContent=last?(done?'Review an activity stop':'Mark checkpoint complete'):(done?'Next stop':'Mark complete and continue');
+  buttons.forEach((button,i)=>{
+    button.textContent=(i+1)+'. '+stops[i].name+(completed.has(i)?' ✓':'');
+    button.setAttribute('aria-pressed',String(i===current));
+  });
+}
+get('overview').addEventListener('click',()=>{zoomed=false;updateCamera();});
+get('previous').addEventListener('click',()=>{if(current>0)showStop(current-1,true);else{zoomed=false;updateCamera();}});
+get('next').addEventListener('click',()=>{
+  if (current<0) {
+    const first=stops.findIndex((_,i)=>!completed.has(i));
+    showStop(first<0?0:first,true);
+    return;
+  }
+  if (current===stops.length-1 && completed.has(current)) {
+    const first=stops.findIndex((_,i)=>!completed.has(i));
+    showStop(first<0?0:first,true);
+    return;
+  }
+  completed.add(current);
+  try { localStorage.setItem(storageKey,JSON.stringify([...completed])); } catch {}
+  if (current<stops.length-1) showStop(current+1,true);
+  else updateProgress();
+});
+get('step').textContent='Junior Cycle Biology';
+get('fact-title').textContent='Follow a bite of food';
+get('fact-file').hidden=false;
+get('facts').append(htmlElement('p','Start at the mouth. At each stop, the body map moves to the organ and a separate labelled view shows it in more detail.'));
+if (completed.size>0 && completed.size<stops.length) get('next').textContent='Resume journey';
+updateCamera();
+updateProgress();
+</script></body></html>
